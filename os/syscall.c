@@ -124,7 +124,7 @@ uint64 sys_task_info(uint64 u_va) //fills TaskInfo in user mem w/ process status
         kinfo.syscall_times[i] = p->syscall_times[i];
     }
 
-    //get current cycle count
+    // get current cycle count
     uint64 now = get_cycle();
     if (p->start_time == 0) {
         kinfo.time = 0;

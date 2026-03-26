@@ -19,7 +19,7 @@ uint64 sys_write(int fd, uint64 va, uint len)
     //get running process that's currently running to open its pg table
     struct proc *p = curr_proc();
     
-    //make a kernel buffer (holds copied input string)
+    //make a kernel buffer (holds copied input string) 
     char str[MAX_STR_LEN];
 
     //copies null-term str from user VM to kernel buffer

@@ -7,7 +7,7 @@ static uint64 *app_info_ptr;
 extern char _app_num[], _app_names[], INIT_PROC[];
 char names[MAX_APP_NUM][MAX_STR_LEN];
 
-// Get user progs' infomation through pre-defined symbol in `link_app.S`
+// Get user progs' information through pre-defined symbol in link_app.S
 void loader_init()
 {
 	char *s;
@@ -85,7 +85,7 @@ int loader(int app_id, struct proc *p)
 	return bin_loader(app_info_ptr[app_id], app_info_ptr[app_id + 1], p);
 }
 
-// load all apps and init the corresponding `proc` structure.
+// load all apps and init the corresponding proc structure.
 int load_init_app()
 {
 	int id = get_id_by_name(INIT_PROC);
@@ -97,6 +97,6 @@ int load_init_app()
 	}
 	debugf("load init proc %s", INIT_PROC);
 	loader(id, p);
-	add_task(p);
+	//add_task(p);
 	return 0;
 }
